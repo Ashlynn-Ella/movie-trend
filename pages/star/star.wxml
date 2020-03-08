@@ -1,0 +1,7 @@
+<!--pages/star/star.wxml-->
+<template name='star'>
+    <view class="shop-star">
+        <view class="star-before">★★★★★</view>
+        <view class="star-after" style="width:{{value*10}}%">★★★★★</view>
+    </view>
+</template>

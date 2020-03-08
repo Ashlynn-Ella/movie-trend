@@ -1,0 +1,159 @@
+/* pages/detail/detail.wxss */
+@import '/pages/rating-star/rating-star';
+@import '/pages/star/star';
+
+page {
+  background: #f8f7f3;
+}
+
+.detail-header {
+  width: 100%;
+  padding: 20rpx 0;
+  background: #eee;
+  text-align: center;
+}
+
+.detail-header .header-poster {
+  width: 300rpx;
+  height: 450rpx;
+}
+
+.detail-content {
+  padding: 40rpx 40rpx;
+}
+
+.detail-info {
+  padding: 20rpx 0;
+  display:flex;
+  justify-content:space-between;
+}
+
+.detail-info .info-text {
+  display: flex;
+  flex-direction: column;
+  margin-right:20rpx;
+}
+
+.detail-info .info-text .info-title {
+  font-size: 42rpx;
+  font-weight: 700;
+  margin-bottom: 10rpx;
+}
+
+.detail-info .info-text .info-des {
+  font-size: 30rpx;
+  color: gray;
+}
+
+.detail-info .info-rating {
+  box-sizing: border-box;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+  min-width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 10rpx rgba(0,0,0,.6);
+  border-radius: 4rpx;
+  justify-content: center;
+
+}
+
+.detail-info .info-rating .rating-score {
+  font-size: 40rpx;
+  font-weight: 700;
+  padding: 5rpx 0;
+}
+
+.detail-info .info-rating .rating-count {
+  font-size: 20rpx;
+  font-weight: 600;
+  color: gray;
+  margin-top: 5rpx;
+}
+
+.btn-box {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.btn-box .wish-btn, .collect-btn {
+  width: 200rpx;
+  height: 50rpx;
+  border: 2rpx solid #f40;
+  color: #f40;
+  text-align: center;
+  font-size: 32rpx;
+  padding: 8rpx;
+  border-radius: 4rpx;
+  font-weight: 400;
+  box-shadow: 0 0 5rpx rgba(0,0,0,.6);
+}
+
+.detail-desc {
+  padding: 20rpx 0;
+}
+
+.desc-title {
+  font-size: 32rpx;
+  color: #111;
+  font-weight: 600;
+}
+.desc-content {
+  /* text-indent: 56rpx; */
+  font-size: 28rpx;
+  color: gray;
+  margin-top:20rpx;
+}
+
+.fold-close {
+  height: 112rpx;
+  overflow: hidden;
+}
+
+.fold-open {
+  height: auto;
+}
+
+.detail-desc .fold {
+  color: green;
+  font-size: 28rpx;
+}
+
+.cast {
+  width: 100%;
+}
+
+.actor-scroll {
+  margin-top:20rpx;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.actor-box {
+  display: inline-block;
+  width: 200rpx;
+  height: 310rpx;
+  margin-right: 20rpx;
+  text-align: center;  
+}
+
+.actor-image {
+  width: 200rpx;
+  height: 280rpx;
+  border-radius:10rpx;
+}
+
+.actor-name {
+  font-size: 28rpx;
+  color: gray;
+  text-align: center;
+
+}
+.comments{
+  margin-top:40rpx;
+}

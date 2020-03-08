@@ -1,0 +1,36 @@
+<!--pages/comment/comment.wxml-->
+<import src="/pages/rating/rating.wxml" />
+<import src="/pages/star/star.wxml" />
+<view class="comments">
+  <view class="conmments-header">
+    <view>
+        <text class='comments-title'>短评</text>
+        <text class='comments-total'>{{total}}条</text>
+    </view>
+    <view class='icon-more' bindtap="changeDer">
+        <text>{{watchType ? '看过' : '想看'}}</text>
+        <image class="{{hasWatch ? 'icon-down' : 'icon-up'}}" src="/assets/images/icon-down.png"></image>       
+    </view>
+    <view class="change-box{{hasWatch ? '' : ' show'}}">
+        <view class="change-item {{watchType ? 'selected' : ''}}" bindtap="changeWatchType">看过</view>
+        <view class="change-item {{watchType ? '' : 'selected'}}" bindtap="changeType">想看</view>
+    </view>
+  </view>
+  <block wx:for="{{commentData}}" wx:key="{{item.id}}">
+    <view class="comments-info">
+      <view class="info-header">
+        <image class="author-avatar" src="{{item.author.avatar}}"></image>
+        <view class="author-info">
+          <text class="author-name">{{item.author.name}}</text>
+          <view class="comment-rat">
+            <template is="star" data='{{...item.rating}}'></template>
+            <text class="created-time">{{item.created_at}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="info-comment">
+        {{item.content}}
+      </view>
+    </view>
+  </block>
+</view>

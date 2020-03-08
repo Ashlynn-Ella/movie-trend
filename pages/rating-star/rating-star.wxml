@@ -1,0 +1,4 @@
+<!--pages/rating-star/rating-star.wxml-->
+<template name='rating-star'>
+  <view class='rating-star allstar{{stars || "00"}}'></view>
+</template>

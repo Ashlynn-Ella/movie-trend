@@ -1,0 +1,24 @@
+/* pages/user/user.wxss */
+
+.user{
+  background-color: #07c160;
+  height: 400rpx;
+  display: flex;
+}
+.user image{
+  width: 220rpx;
+  height: 220rpx;
+  border: 10rpx solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.info{
+  background-color: #fff;
+}
+.info-item{
+  font-size: 14px;
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+page{
+  background-color: #f1f1f1;
+}

@@ -1,0 +1,49 @@
+<!--pages/home/index.wxml-->
+<import src="/pages/movie-grid/movie-grid.wxml"></import>
+<view class='container'>
+  <view class='search-movie' bindtap="movetoSearch">
+    <view class="search-box">
+      <icon type='search' size="16" class='search-icon'></icon>
+      <text class='search-placeholder'>搜索电影</text>
+    </view>
+  </view>
+  <view class='session-page first-session-page'>
+    <view class='session-header'>
+      <text class='header-title'>影院热映</text>
+      <text class='header-more' bindtap='movetoMore' data-type-id='intheaters'>查看更多></text>
+    </view>
+    <view class='session-content'>
+      <scroll-view scroll-x class='movie-scroll'>
+        <block wx:for="{{inTheaters}}" wx:key="key">
+          <template is='movie-grid' data="{{...item}}"></template>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='session-page'>
+    <view class='session-header'>
+      <text class='header-title'>即将上映</text>
+      <text class='header-more' bindtap='movetoMore' data-type-id='commingsoon'>查看更多></text>
+    </view>
+    <view class='session-content'>
+      <scroll-view scroll-x class='movie-scroll'>
+        <block wx:for="{{commingSoon}}" wx:key="key">
+          <template is='movie-grid' data="{{...item}}"></template>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='session-page'>
+    <view class='session-header'>
+      <text class='header-title'>电影Top250</text>
+      <text class='header-more' bindtap='movetoMore' data-type-id='top250'>查看更多></text>
+    </view>
+    <view class='session-content'>
+      <scroll-view scroll-x class='movie-scroll'>
+        <block wx:for="{{top250}}" wx:key="key">
+          <template is='movie-grid' data="{{...item}}"></template>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>

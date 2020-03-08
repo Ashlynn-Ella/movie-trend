@@ -1,0 +1,28 @@
+<!--pages/user/user.wxml-->
+<view class="user center">
+  <image src="/assets/images/avatar.png"></image>
+</view>
+<view class="space"></view>
+<view class="info">
+  <navigator class="info-item">
+    <text class="arrow">我的书影音</text>
+  </navigator>
+  <navigator class="info-item">
+    <text class="arrow">观影分析</text>
+  </navigator>
+</view>
+<view class="space"></view>
+<view class="info">
+  <navigator class="info-item">
+    <text class="arrow">读书分析</text>
+  </navigator>
+  <navigator class="info-item">
+    <text class="arrow">音乐分析</text>
+  </navigator>
+</view>
+<view class="info">
+  <navigator class="info-item">
+    <text class="arrow">设置</text>
+  </navigator>
+</view>
+

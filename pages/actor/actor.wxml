@@ -1,0 +1,43 @@
+<!--pages/actor/actor.wxml-->
+<import src="/pages/rating-star/rating-star.wxml" />
+<view class='container'>
+  <view class='actor-header'>
+    <image class='header-poster' src="{{actorData.avatars.large}}" bindtap="previewImage" data-src="{{actorData.avatars.large}}"></image>
+  </view>
+  <view class='actor-content'>
+    <view class='actor-info'>
+      <view class='info-text'>
+        <text class='info-title'>{{actorData.name}} {{actorData.name_en}}</text>
+        <text class='info-des'>性别：{{actorData.gender}}</text>
+        <text class='info-des'>星座：{{actorData.constellation}}</text>
+        <text class='info-des'>出生日期：{{actorData.birthday}}</text>
+        <text class='info-des'>出生地：{{actorData.born_place}}</text>
+      </view>
+    </view>
+    <block wx:if='{{actorData.summary}}'>
+      <view class='actor-desc'>
+        <text class='desc-title'>简介</text>
+        <view class='desc-content {{showAll ? "fold-open" : "fold-close"}}'>{{actorData.summary}}</view>
+        <text class='fold' bindtap="foldContent">{{actionText}}</text>
+      </view>
+    </block>
+
+    <view class='actor-img'>
+      <text class='desc-title'>图片</text>
+      <scroll-view scroll-x class='actor-scroll'>
+        <view wx:for="{{actorData.photos}}" wx:key="item" class='actor-box'>
+          <image class='actor-image' src='{{item.cover}}' bindtap="previewImage" data-src="{{item.image}}"></image>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='actor-works'>
+      <text class='desc-title'>个人作品</text>
+      <scroll-view scroll-x class='actor-scroll'>
+        <view wx:for="{{actorData.works}}" wx:key="item" class='work-box'>
+          <image class='work-image' src='{{item.subject.images.small}}' bindtap="movetoDetail" data-movie-id="{{item.subject.id}}"></image>
+          <view class='work-name'>{{item.subject.title}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

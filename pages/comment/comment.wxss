@@ -1,0 +1,57 @@
+/* pages/comment/comment.wxss */
+@import '/pages/star/star';
+page{
+    background: #fff;
+}
+
+.conmments-header .comments-total{
+    font-size:26rpx;
+    color:#666;
+    margin-left:10rpx;
+}
+
+.icon-down,.icon-up{
+	width: 22rpx;
+	height: 22rpx;
+    margin-left:15rpx;
+    margin-right:15rpx;
+}
+.icon-more .icon-up{
+    transform: rotate(180deg);
+}
+.conmments-header{
+    position: relative;
+}
+.change-box{
+	width: 200rpx;
+	height: 150rpx;
+	position: absolute;
+	right: 0;
+	bottom: -150rpx;
+	border: 1rpx solid #e5e5e5;
+	box-shadow: -1rpx 3rpx 5rpx #ccc;
+    background-color: #fff;
+    border-radius:5rpx;
+    display:none;
+}
+
+.change-item{
+	height: 75rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+    line-height:75rpx;
+    text-align:center;
+    font-size:24rpx;
+    color:#666;
+}
+.change-item:last-child{
+    border-bottom: none;
+}
+
+.selected{
+    color: #07c160;
+}
+.show{
+    display:block;
+}
+
+

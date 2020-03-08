@@ -1,0 +1,16 @@
+/* pages/star/star.wxss */
+
+.shop-star{
+  font-size: 16px;
+  position: relative;
+}
+.star-before{
+  color: #e2e2e2;
+}
+.star-after{
+  color: #f19e38;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}

@@ -1,0 +1,70 @@
+<!--pages/detail/detail.wxml-->
+<import src="/pages/rating-star/rating-star.wxml" />
+<import src="/pages/star/star.wxml" />
+<view class='container'>
+  <view class='detail-header'>
+    <image class='header-poster' src="{{movieData.images.large}}" bindtap="previewImage" data-src="{{movieData.images.large}}"></image>
+  </view>
+  <view class='detail-content'>
+    <view class='detail-info'>
+      <view class='info-text'>
+        <text class='info-title'>{{movieData.title}}</text>
+        <text class='info-des'>{{infoDes}}</text>
+        <text class='info-des'>原名：{{movieData.original_title}}</text>
+        <text class='info-des'>国家：{{country}}</text>
+      </view>
+      <view class='info-rating'>
+        <text class='rating-score'>{{movieData.rating.average}}</text>
+         <template is="rating-star" data='{{...movieData.rating}}'></template>
+        <text class='rating-count'>{{movieData.ratings_count}}人</text>
+      </view>
+    </view>
+    <view class='btn-box'>
+      <view class='wish-btn' bindtap="wantToSee">想看</view>
+      <view class='collect-btn' bindtap="haveSeen">看过</view>
+    </view>
+    <view class='detail-desc'>
+      <text class='desc-title'>简介</text>
+      <view class='desc-content {{showAll ? "fold-open" : "fold-close"}}'>{{movieData.summary}}</view>
+      <text class='fold' bindtap="foldContent">{{actionText}}</text>
+    </view>
+     <view class='cast'>
+      <text class='desc-title'>影人</text>
+      <scroll-view scroll-x class='actor-scroll'>
+        <view wx:for="{{movieData.casts}}" wx:key="item" class='actor-box'>
+          <image class='actor-image' src='{{item.avatars.small}}' data-actor-id='{{item.id}}' bindtap='movetoActor'></image>
+          <view class='actor-name'>{{item.name}}</view>
+        </view>
+      </scroll-view>
+    </view> 
+    <view class="comments">
+      <view class="conmments-header">
+        <text class='comments-title'>短评</text>
+        <text class='icon-more' data-id="{{movieData.id}}" bindtap="movetoComment">全部 {{total}} ></text>
+      </view>
+      <block wx:for="{{commentData}}" wx:key="{{item.id}}">
+        <view class="comments-info">
+          <view class="info-header">
+            <image class="author-avatar" src="{{item.author.avatar}}"></image>
+            <view class="author-info">
+              <text class="author-name">{{item.author.name}}</text>
+              <view class="comment-rat">
+                <template is="star" data='{{...item.rating}}'></template>
+                <text class="created-time">{{item.created_at}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="info-comment">
+            {{item.content}}
+          </view>
+        </view>
+      </block>
+      <view>
+        <navigator class="conmments-footer" url="../comment/comment?movieId={{movieData.id}}">
+          <text class="comments-title">查看全部短评</text>
+          <text class="icon-more"> ></text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

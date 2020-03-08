@@ -1,0 +1,24 @@
+<!--pages/search/search.wxml-->
+<view>
+  <view class='search-movie'>
+    <view class="search-box">
+      <icon type='search' size="16" class='search-icon'></icon>
+      <input class='search-input' placeholder='搜索书籍类型，如：旅行' bindinput='searchMovie'></input>
+      <text class='search-cancel' bindtap='backtoHome'>取消</text>
+    </view>
+  </view>
+  <view class='search-list'>
+    <block wx:for="{{resultList}}" wx:key="item">
+      <view class='movie-wrapper' data-id="{{item.id}}" bindtap="movetoDetail">
+        <view class='movie-content'>
+          <image class='poster' src="{{item.image}}" />
+          <view class='total'>
+            <text class='title'>{{item.title}}</text>
+            <text class='desc'>{{item.desc}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
